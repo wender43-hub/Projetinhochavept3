@@ -9,9 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo base para usar a fonte Inter */
+        /* Estilo base para usar a fonte Inter e IMAGEM DE FUNDO */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: '', sans-serif;
+            /* --- LINHAS ADICIONADAS PARA O FUNDO --- */
+            background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1507842217121-9d59754a5ce5?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            /* --------------------------------------- */
         }
         /* Efeito de scroll suave */
         html {
@@ -42,11 +48,11 @@
 
     <div class="container mx-auto px-4 py-8 max-w-7xl">
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-2">Minha Biblioteca Digital</h1>
-            <p class="text-lg text-gray-400">Explore, pesquise e leia seus livros favoritos em PDF.</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-2 drop-shadow-lg">Minha Biblioteca Digital</h1>
+            <p class="text-lg text-gray-300 drop-shadow-md">Explore, pesquise e leia seus livros favoritos em PDF.</p>
         </header>
 
-        <div class="mb-10 p-4 bg-gray-800 rounded-xl shadow-2xl sticky top-4 z-10 border border-gray-700">
+        <div class="mb-10 p-4 bg-gray-800/90 backdrop-blur-sm rounded-xl shadow-2xl sticky top-4 z-10 border border-gray-700">
             <div class="flex flex-col md:flex-row md:items-center gap-4">
                 
                 <div class="relative flex-grow">
@@ -390,132 +396,9 @@
                 title: "Viagem ao Centro da Terra",
                 author: "Júlio Verne",
                 genre: "Ficção Científica",
-                coverImage: "https://cdn.kobo.com/book-images/28265f50-af95-4971-aafd-ea381ed59465/353/569/90/False/viagem-ao-centro-da-terra-2.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788537805176-L.jpg",
                 pdfUrl: "https://daffy.ufs.br/uploads/page_attach/path/7865/LEITURA_1_CI_NCIAS_7ANO.pdf"
             },
             {
                 id: 39,
-                title: "Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
-                author: "C.S. Lewis",
-                genre: "Fantasia Juvenil",
-                coverImage: "https://cdn.kobo.com/book-images/063c72fd-3231-438a-85ab-47e464bf6d6d/353/569/90/False/as-cronicas-de-narnia-colecao-de-luxo-o-leao-a-feiticeira-e-o-guarda-roupa.jpg",
-                pdfUrl: "https://itaudeminas.mg.gov.br/arquivos/ere/livros/o-Leao-a-feiticeira-e-o-guarda-roupa.pdf"
-            },
-            {
-                id: 40,
-                title: "Crime e Castigo",
-                author: "Fiódor Dostoiévski",
-                genre: "Clássico",
-                coverImage: "https://livrariapublica.com.br/capa/crime-e-castigo-classicos-da-literatura-mundial-fiodor-dostoievski-pdf-B08HRCW1RM.webp",
-                pdfUrl: "https://felipebmansur.wordpress.com/wp-content/uploads/2020/03/dostoievski-fiodor_crime-e-castigo-ed.-34.pdf"
-            },
-            {
-                id: 41,
-                title: "A Paciente Silenciosa",
-                author: "Alex Michaelides",
-                genre: "Thriller",
-                coverImage: "https://livrariapublica.com.br/capa/a-paciente-silenciosa-alex-michaelides-pdf-B07NLKFWGY.webp",
-                pdfUrl: "https://osaberdigital.com.br/wp-content/uploads/2025/02/A-Paciente-Silenciosa-Alex-Michaelides.pdf"
-            },
-            {
-                id: 42,
-                title: "O Mundo de Sofia",
-                author: "Jostein Gaarder",
-                genre: "Filosofia",
-                coverImage: "https://livrariapublica.com.br/capa/o-mundo-de-sofia-romance-da-historia-da-filosofia-jostein-pdf-B00AC0ZIFA.webp",
-                pdfUrl: "https://cabana-on.com/Ler/wp-content/uploads/2017/08/O-Mundo-de-Sofia-Jostein-Gaarder.pdf"
-            },
-            {
-                id: 43,
-                title: "A Estrada",
-                author: "Cormac McCarthy",
-                genre: "Drama",
-                coverImage: "https://livrariapublica.com.br/capa/a-estrada-cormac-mccarthy-pdf-B00A3D9LY0.webp",
-                pdfUrl: "https://notamanuscrita.com/wp-content/uploads/2015/07/mccarthy-a-estrada.pdf"
-            },
-            {
-                id: 44,
-                title: "Neuromancer",
-                author: "William Gibson",
-                genre: "Ficção Científica",
-                coverImage: "https://share.google/images/S8jm28FK6y3yNZodN",
-                pdfUrl: "#"
-            },
-            {
-                id: 45,
-                title: "A Arte da Guerra",
-                author: "Sun Tzu",
-                genre: "Não Ficção",
-                coverImage: "https://share.google/images/ArByg5VVUhYqVRIUI",
-                pdfUrl: "https://biblioteca.unisced.edu.mz/bitstream/123456789/1872/1/A%20ARTE%20DA%20GUERRA%20-%20ok.pdf"
-            },
-            {
-                id: 46,
-                title: "O Conde de Monte Cristo",
-                author: "Alexandre Dumas",
-                genre: "Clássico",
-                coverImage: "https://share.google/images/XVXPLwhkJjTXcV4vK",
-                pdfUrl: "https://www.ufmg.br/centrocultural/wp-content/uploads/2020/05/3-O-Conde-de-Monte-Cristo-Alexandre-Dumas-1_compressed1.pdf"
-            },
-            {
-                id: 47,
-                title: "O Labirinto do Fauno",
-                author: "Guillermo del Toro",
-                genre: "Fantasia",
-                coverImage: "https://share.google/images/FI0spO6yeypQn6om3",
-                pdfUrl: "https://www.intrinseca.com.br/upload/livros/1%C2%BACAP_OLabirintoDeFauno.pdf"
-            },
-            {
-                id: 48,
-                title: "Garota Exemplar",
-                author: "Gillian Flynn",
-                genre: "Thriller",
-                coverImage: "https://share.google/images/9E32UqwtdCuaeyuq6",
-                pdfUrl: "https://static.tumblr.com/amm1lw6/qAlmltxdn/garota_exemplar_-_gillian_flynn.pdf"
-            },
-            {
-                id: 49,
-                title: "O Poder do Hábito",
-                author: "Charles Duhigg",
-                genre: "Auto ajuda",
-                coverImage: "https://share.google/images/AUqBT87KiyRcQAQbo",
-                pdfUrl: "https://files.cercomp.ufg.br/weby/up/58/o/O_poder_do_Ha%CC%81bito.pdf.pdf"
-            },
-            {
-                id: 50,
-                title: "Admirável Mundo Novo",
-                author: "Aldous Huxley",
-                genre: "Ficção Científica",
-                coverImage: "https://share.google/images/P1Ms7xfppVtP5cxGZ",
-                pdfUrl: "https://cesarmangolin.wordpress.com/wp-content/uploads/2010/08/aldous-huxley-admiravel-mundo-novo.pdf"
-            },
-            {
-                id: 51,
-                title: "Os Miseráveis",
-                author: "Victor Hugo",
-                genre: "Clássico",
-                coverImage: "https://share.google/images/ZJvTOeR6gxEuhKIs",
-                pdfUrl: "https://www.assisprofessor.com.br/documentos/livros/Os_Miseraveis_Victor_Hugo.pdf"
-            },
-            {
-                id: 52,
-                title: "A Casa dos Espíritos",
-                author: "Isabel Allende",
-                genre: "Realismo Mágico",
-                coverImage: "https://share.google/images/a2LXvU496PrrxPYIO",
-                pdfUrl: "https://cdn.bookey.app/files/pdf/book/pt/a-casa-dos-esp%C3%ADritos.pdf"
-            },
-            {
-                id: 53,
-                title: "Frankenstein",
-                author: "Mary Shelley",
-                genre: "Terror",
-                coverImage: "https://share.google/xHEIao6rBFKFw2W6M",
-                pdfUrl: "https://drive.google.com/drive/folders/1ehWno7i0HTXHITcARHwi97EdADdjLN8b"
-            },
-            {
-                id: 54,
-                title: "O Retrato de Dorian Gray",
-                author: "Oscar Wilde",
-                genre: "Clássico",
-                coverImage: "
+                title: "Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Rou
