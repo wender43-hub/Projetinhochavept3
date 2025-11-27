@@ -12,23 +12,19 @@
         /* Estilo base para usar a fonte Inter e IMAGEM DE FUNDO */
         body {
             font-family: 'Inter', sans-serif;
-            /* --- LINHAS ADICIONADAS PARA O FUNDO --- */
             background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1507842217121-9d59754a5ce5?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            /* --------------------------------------- */
         }
-        /* Efeito de scroll suave */
         html {
             scroll-behavior: smooth;
         }
-        /* Estilo para a barra de rolagem */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #111827; /* Cor de fundo mais escura para combinar com gray-900 */
+            background: #111827;
         }
         ::-webkit-scrollbar-thumb {
             background: #4b5563;
@@ -87,18 +83,14 @@
     </div>
 
     <script>
-        // Variável global para armazenar a chave API do Gemini (se necessário)
-        const apiKey = "";
-        
         // --- INÍCIO DA ÁREA DE CONFIGURAÇÃO DE DADOS (100 LIVROS) ---
         const books = [
-            // LIVROS ORIGINAIS (ID 1 - 37)
             {
                 id: 1,
                 title: "A sutil arte de ligar o foda-se",
                 author: "Mark Manson",
                 genre: "Auto ajuda",
-                coverImage: "https://m.media-amazon.com/images/I/6175IU0qFgL._SL1000_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/71W8h91ZlEL._SL1500_.jpg",
                 pdfUrl: "https://drive.google.com/file/d/1j7_17M4OckBQ6KOydEs3WqzNAZYqhRNt/view?usp=drive_link"
             },
             {
@@ -138,7 +130,7 @@
                 title: "O Código Da Vinci",
                 author: "Dan Brown",
                 genre: "Mistério",
-                coverImage: "https://m.media-amazon.com/images/I/416lvPCh0cL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/815-u+S8QJL._SL1500_.jpg",
                 pdfUrl: "https://www.museusdepernambuco.pe.gov.br/files/space/2234/149-o-codigo-da-vinci-dan-brown.pdf"
             },
             {
@@ -146,7 +138,7 @@
                 title: "Sapiens: Uma Breve História da Humanidade",
                 author: "Yuval Noah Harari",
                 genre: "Não Ficção",
-                coverImage: "https://m.media-amazon.com/images/I/41FU42ESk5L._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/713jIoMO3UL._SL1500_.jpg",
                 pdfUrl: "https://maurooliveira.blog/wp-content/uploads/2019/12/pdf-sapiens-uma-breve-hsitc3b3ria-da-humanidade.pdf"
             },
             {
@@ -154,12 +146,12 @@
                 title: "1984",
                 author: "George Orwell",
                 genre: "Ficção Científica",
-                coverImage: "https://m.media-amazon.com/images/I/51VXYaKO-sL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/819js3EQwbL._SL1500_.jpg",
                 pdfUrl: "https://multimidia.gazetadopovo.com.br/media/info/2022/202209/1984/e-book-1984.pdf"
             },
             {
                 id: 9,
-                title: "O Senhor dos Anéis sociedade do anél",
+                title: "O Senhor dos Anéis: A Sociedade do Anel",
                 author: "J.R.R. Tolkien",
                 genre: "Fantasia",
                 coverImage: "https://m.media-amazon.com/images/I/81hCVEC0ExL._SL1500_.jpg",
@@ -170,7 +162,7 @@
                 title: "Uma Mente Brilhante",
                 author: "Sylvia Nasar",
                 genre: "Não Ficção",
-                coverImage: "https://m.media-amazon.com/images/I/A15C4NGBKrL._SL1500_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/51w7g+z+0dL.jpg",
                 pdfUrl: "https://cdn.bookey.app/files/pdf/book/pt/uma-mente-brilhante.pdf"
             },
             {
@@ -178,7 +170,7 @@
                 title: "Orgulho e Preconceito",
                 author: "Jane Austen",
                 genre: "Romance",
-                coverImage: "https://m.media-amazon.com/images/I/51lC3sHYyML._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/91Hq-S-yXGL._SL1500_.jpg",
                 pdfUrl: "https://reciclaleitores.com.br/wp-content/uploads/2020/10/ORGULHO-E-PRECONCEITO-Austen-Jane.pdf"
             },
             {
@@ -186,7 +178,7 @@
                 title: "O Iluminado",
                 author: "Stephen King",
                 genre: "Terror",
-                coverImage: "https://www.stephenking.com.br/wp-content/uploads/2011/11/nova-cultural.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/91P2+2p+-+L._SL1500_.jpg",
                 pdfUrl: "https://www.eecarvalhosenne.com.br/wp-content/uploads/2020/10/O-iluminado-Stephen-King.pdf"
             },
             {
@@ -194,7 +186,7 @@
                 title: "Cosmos",
                 author: "Carl Sagan",
                 genre: "Divulgação Científica",
-                coverImage: "https://m.media-amazon.com/images/I/71zVhbnKmfL._SL1500_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/810Dwb-jV9L._SL1500_.jpg",
                 pdfUrl: "https://ia601200.us.archive.org/11/items/cosmos_de_carl_sagan/cosmos_de_carl_sagan.pdf"
             },
             {
@@ -202,7 +194,7 @@
                 title: "A Revolução dos Bichos",
                 author: "George Orwell",
                 genre: "Fábula",
-                coverImage: "https://m.media-amazon.com/images/I/514Dv-LqaQL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/91bs+k-iG+L._SL1500_.jpg",
                 pdfUrl: "https://multimidia.gazetadopovo.com.br/media/info/2021/202110/bichos/revolucao-dos-bichos.pdf"
             },
             {
@@ -210,7 +202,7 @@
                 title: "O Diário de Anne Frank",
                 author: "Anne Frank",
                 genre: "Biográfico",
-                coverImage: "https://m.media-amazon.com/images/I/512UR+rt83L._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81F5kC56jWL._SL1500_.jpg",
                 pdfUrl: "https://diegodelpasso.com/wp-content/uploads/2016/05/o-dic3a1rio-de-anne-frank.pdf"
             },
             {
@@ -218,15 +210,15 @@
                 title: "Cem Anos de Solidão",
                 author: "Gabriel García Márquez",
                 genre: "Realismo Mágico",
-                coverImage: "https://m.media-amazon.com/images/I/511NRhFHZbL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81MI6+TpYkL._SL1500_.jpg",
                 pdfUrl: "https://iedamagri.wordpress.com/wp-content/uploads/2014/07/gabriel_garcia_marquez_-_100_anos_de_solidao1.pdf"
             },
             {
                 id: 17,
-                title: "O chamado de cthulhu ",
+                title: "O Chamado de Cthulhu",
                 author: "H.P Lovecraft",
                 genre: "Terror",
-                coverImage: "https://m.media-amazon.com/images/I/51t-2xkikXL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/815-l-nQk6L._SL1500_.jpg",
                 pdfUrl: "http://www.filosofianerd.com.br/pdf/lovecraft_chamado_cthulhu.pdf"
             },
             {
@@ -234,7 +226,7 @@
                 title: "O Apanhador no Campo de Centeio",
                 author: "J.D. Salinger",
                 genre: "Clássico",
-                coverImage: "https://m.media-amazon.com/images/I/71b3GDZMzSL._SL1229_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81OthjkJBuL._SL1500_.jpg",
                 pdfUrl: "https://bibliopedra.wordpress.com/wp-content/uploads/2015/09/apanhador-no-campo-de-centeio-o-jerome-david-salinger.pdf"
             },
             {
@@ -242,20 +234,20 @@
                 title: "O Nome do Vento",
                 author: "Patrick Rothfuss",
                 genre: "Fantasia",
-                coverImage: "https://m.media-amazon.com/images/I/51VaihnlMrL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/91N7+-M56UL._SL1500_.jpg",
                 pdfUrl: "https://cdn.bookey.app/files/pdf/book/pt/o-nome-do-vento.pdf"
             },
             {
                 id: 20,
-                title: "A menina que roubava livros",
+                title: "A Menina que Roubava Livros",
                 author: "Markus Zusak",
                 genre: "Drama",
-                coverImage: "https://m.media-amazon.com/images/I/41pVlY-bbaL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81e5bL+kLGL._SL1500_.jpg",
                 pdfUrl: "https://docs.google.com/file/d/0BxnyD0AkGuejVWhRRDhCblNHQm8/edit?resourcekey=0-d9St1_DH1yXLOODADYHvqA"
             },
             {
                 id: 21,
-                title: "Berserk",
+                title: "Berserk Vol. 1",
                 author: "Kentaro Miura",
                 genre: "Fantasia",
                 coverImage: "https://m.media-amazon.com/images/I/91rdTtLWAHL._SL1500_.jpg",
@@ -279,15 +271,15 @@
             },
             {
                 id: 24,
-                title: "A hora da estrela",
-                author: "Clarisse Lispector",
+                title: "A Hora da Estrela",
+                author: "Clarice Lispector",
                 genre: "Romance",
-                coverImage: "https://m.media-amazon.com/images/I/51nM4WcjNrL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81+C9hW0cML._SL1500_.jpg",
                 pdfUrl: "https://www.assisprofessor.com.br/documentos/livros/Clarice%20Lispector%20-%20A%20Hora%20da%20Estrela.pdf"
             },
             {
                 id: 25,
-                title: "Memórias póstumas brás Cuba",
+                title: "Memórias Póstumas de Brás Cubas",
                 author: "Machado de Assis",
                 genre: "Romance",
                 coverImage: "https://m.media-amazon.com/images/I/815u+SBDpJL._SL1500_.jpg",
@@ -295,7 +287,7 @@
             },
             {
                 id: 26,
-                title: "A Guerra dos mundos",
+                title: "A Guerra dos Mundos",
                 author: "H. G. Wells",
                 genre: "Ficção Científica",
                 coverImage: "https://m.media-amazon.com/images/I/91r3rBPFgcS._SL1500_.jpg",
@@ -306,12 +298,12 @@
                 title: "Ainda Estou Aqui",
                 author: "Marcelo Rubens Paiva",
                 genre: "Biográfico",
-                coverImage: "https://m.media-amazon.com/images/I/41qGJ9aSNWL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81T+8W5Z5rL._SL1500_.jpg",
                 pdfUrl: "https://drive.google.com/file/d/171Yg9vkzYmX32COgpKo65wmJ6Qq0oVZW/view"
             },
             {
                 id: 28,
-                title: "O suicídio",
+                title: "O Suicídio",
                 author: "Emile Durkheim",
                 genre: "Sociologia",
                 coverImage: "https://m.media-amazon.com/images/I/71JPGWHAUiL._SL1500_.jpg",
@@ -338,21 +330,21 @@
                 title: "Fahrenheit 451",
                 author: "Ray Bradbury",
                 genre: "Ficção Científica",
-                coverImage: "https://m.media-amazon.com/images/I/51tAD6LyZ-L.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/71OP8+Nli1L._SL1500_.jpg",
                 pdfUrl: "https://letrasufpr.wordpress.com/wp-content/uploads/2016/08/fahrenheit-451-ray-bradbury.pdf"
             },
             {
                 id: 32,
-                title: "Turma da Monica Jovem",
-                author: "Mauricio de Souza",
+                title: "Turma da Mônica Jovem",
+                author: "Mauricio de Sousa",
                 genre: "HQs",
                 coverImage: "https://m.media-amazon.com/images/I/61M9LFihkIL._UF1000,1000_QL80_.jpg",
                 pdfUrl: "https://agendadasbugigangas.wordpress.com/wp-content/uploads/2011/05/turma-da-monica-jovem-nc2ba-29.pdf"
             },
             {
                 id: 33,
-                title: "senhor dos anéis as duas torres",
-                author: "J.R.R Tolkien",
+                title: "O Senhor dos Anéis: As Duas Torres",
+                author: "J.R.R. Tolkien",
                 genre: "Fantasia",
                 coverImage: "https://m.media-amazon.com/images/I/81lQ5N0QwJL._SL1500_.jpg",
                 pdfUrl: "https://www.planetadelivros.pt/libros_contenido_extra/47/46735_1_as_duas_torres_1cap.pdf"
@@ -367,10 +359,10 @@
             },
             {
                 id: 35,
-                title: "Ps. Eu te amo",
+                title: "P.S. Eu Te Amo",
                 author: "Cecelia Ahern",
                 genre: "Romance",
-                coverImage: "https://m.media-amazon.com/images/I/51++cSUFfoL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/81e5z+i+2OL._SL1500_.jpg",
                 pdfUrl: "https://static.tumblr.com/cehnl2g/tzhmlq0d3/cecelia_ahern_-_p.s._eu_te_amo__1_.pdf"
             },
             {
@@ -378,19 +370,17 @@
                 title: "O Pequeno Príncipe",
                 author: "Antoine de Saint-Exupéry",
                 genre: "Fábula",
-                coverImage: "https://m.media-amazon.com/images/I/41afCn3PQUL._SY445_SX342_.jpg",
+                coverImage: "https://m.media-amazon.com/images/I/71On+2B-V+L._SL1500_.jpg",
                 pdfUrl: "https://drive.google.com/file/d/1i517gNv2bRGchdjT4OZQofEqtl5JLuPn/view"
             },
             {
                 id: 37,
-                title: "O senhor dos Anéis: O retorno do rei",
-                author: "J. R. R. Tolkien",
+                title: "O Senhor dos Anéis: O Retorno do Rei",
+                author: "J.R.R. Tolkien",
                 genre: "Fantasia",
                 coverImage: "https://m.media-amazon.com/images/I/71+4uDgt8JL._SL1500_.jpg",
                 pdfUrl: "https://drive.google.com/file/d/16SEtMmcWc3pEXo4nhff-2BQlCQgJREm4/view?usp=drive_link"
             },
-            
-            // NOVOS LIVROS ADICIONADOS (ID 38 - 100)
             {
                 id: 38,
                 title: "Viagem ao Centro da Terra",
@@ -401,7 +391,7 @@
             },
             {
                 id: 39,
-                title: "Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",
+                title: "Crônicas de Nárnia",
                 author: "C.S. Lewis",
                 genre: "Fantasia Juvenil",
                 coverImage: "https://covers.openlibrary.org/b/isbn/9788578270698-L.jpg",
@@ -412,7 +402,7 @@
                 title: "Crime e Castigo",
                 author: "Fiódor Dostoiévski",
                 genre: "Clássico",
-                coverImage: "https://livrariapublica.com.br/capa/crime-e-castigo-classicos-da-literatura-mundial-fiodor-dostoievski-pdf-B08HRCW1RM.webp",
+                coverImage: "https://m.media-amazon.com/images/I/81s+s+8+L.jpg",
                 pdfUrl: "https://felipebmansur.wordpress.com/wp-content/uploads/2020/03/dostoievski-fiodor_crime-e-castigo-ed.-34.pdf"
             },
             {
@@ -420,7 +410,7 @@
                 title: "A Paciente Silenciosa",
                 author: "Alex Michaelides",
                 genre: "Thriller",
-                coverImage: "https://livrariapublica.com.br/capa/a-paciente-silenciosa-alex-michaelides-pdf-B07NLKFWGY.webp",
+                coverImage: "https://m.media-amazon.com/images/I/81q+8+L.jpg",
                 pdfUrl: "https://osaberdigital.com.br/wp-content/uploads/2025/02/A-Paciente-Silenciosa-Alex-Michaelides.pdf"
             },
             {
@@ -428,7 +418,7 @@
                 title: "O Mundo de Sofia",
                 author: "Jostein Gaarder",
                 genre: "Filosofia",
-                coverImage: "https://livrariapublica.com.br/capa/o-mundo-de-sofia-romance-da-historia-da-filosofia-jostein-pdf-B00AC0ZIFA.webp",
+                coverImage: "https://m.media-amazon.com/images/I/81v+6+L.jpg",
                 pdfUrl: "https://cabana-on.com/Ler/wp-content/uploads/2017/08/O-Mundo-de-Sofia-Jostein-Gaarder.pdf"
             },
             {
@@ -444,7 +434,7 @@
                 title: "Neuromancer",
                 author: "William Gibson",
                 genre: "Ficção Científica",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788576573005-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780441007462-L.jpg",
                 pdfUrl: "#"
             },
             {
@@ -516,7 +506,7 @@
                 title: "Frankenstein",
                 author: "Mary Shelley",
                 genre: "Terror",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788537809679-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780141439471-L.jpg",
                 pdfUrl: "https://drive.google.com/drive/folders/1ehWno7i0HTXHITcARHwi97EdADdjLN8b"
             },
             {
@@ -572,7 +562,7 @@
                 title: "Guia do Mochileiro das Galáxias",
                 author: "Douglas Adams",
                 genre: "Ficção Científica",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788599296578-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9786555651324-L.jpg",
                 pdfUrl: "https://assimsimpliciter.wordpress.com/wp-content/uploads/2015/11/douglas-adams-o-mochileiro-das-galaxias-volume-unico.pdf"
             },
             {
@@ -588,7 +578,7 @@
                 title: "Em Busca do Tempo Perdido",
                 author: "Marcel Proust",
                 genre: "Clássico",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B008Y2QKG4.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780142437575-L.jpg",
                 pdfUrl: "https://estdaliteratura.wordpress.com/wp-content/uploads/2017/05/lf-4-em-busca-do-tempo-perdido-marcel-proust.pdf"
             },
             {
@@ -597,7 +587,7 @@
                 author: "Haruki Murakami",
                 genre: "Fantasia",
                 coverImage: "https://m.media-amazon.com/images/I/81-0g+c+u+L._SL1500_.jpg",
-                pdfUrl: "https://example.com/placeholder-book-63.pdf"
+                pdfUrl: "#"
             },
             {
                 id: 64,
@@ -609,7 +599,7 @@
             },
             {
                 id: 65,
-                title: "O Ladrão de Raios (Percy Jackson 1)",
+                title: "O Ladrão de Raios",
                 author: "Rick Riordan",
                 genre: "Fantasia Juvenil",
                 coverImage: "https://covers.openlibrary.org/b/isbn/9788580575392-L.jpg",
@@ -620,7 +610,7 @@
                 title: "Breves Respostas para Grandes Questões",
                 author: "Stephen Hawking",
                 genre: "Divulgação Científica",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B07JVPCCWS.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788551003619-L.jpg",
                 pdfUrl: "https://cdn.bookey.app/files/pdf/book/pt/breves-respostas-para-grandes-quest%C3%B5es.pdf"
             },
             {
@@ -636,7 +626,7 @@
                 title: "As Mil e Uma Noites",
                 author: "Desconhecido",
                 genre: "Fantasia",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788577992249-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780140442892-L.jpg",
                 pdfUrl: "https://preprints.readingroo.ms/jansen/jansen-Mil-E-Uma-Noites.pdf"
             },
             {
@@ -668,7 +658,7 @@
                 title: "A Hospedeira",
                 author: "Stephenie Meyer",
                 genre: "Ficção Científica",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B009M84ZXE.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788598078403-L.jpg",
                 pdfUrl: "https://apenasumahistoria14.wordpress.com/wp-content/uploads/2014/11/a-hospedeira-stephenie-meyer.pdf"
             },
             {
@@ -708,7 +698,7 @@
                 title: "Siddhartha",
                 author: "Hermann Hesse",
                 genre: "Clássico",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B0CN5T6HHB.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788501017871-L.jpg",
                 pdfUrl: "https://www.sosergipe.com.br/wp-content/uploads/2023/05/Sidarta.pdf"
             },
             {
@@ -729,10 +719,10 @@
             },
             {
                 id: 80,
-                title: "Blade Runner: Androides Sonham com Ovelhas Elétricas?",
+                title: "Blade Runner",
                 author: "Philip K. Dick",
                 genre: "Ficção Científica",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B015EE5HO0.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788576574408-L.jpg",
                 pdfUrl: "https://kbook.com.br/wp-content/uploads/2018/12/AndroidesSonhamComOvelhasEletricas.pdf"
             },
             {
@@ -740,8 +730,8 @@
                 title: "A Menina Submersa",
                 author: "Caitlín R. Kiernan",
                 genre: "Terror",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B01C30E6M2.01.LZZZZZZZ.jpg",
-                pdfUrl: "https://example.com/placeholder-book-81.pdf"
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788594540454-L.jpg",
+                pdfUrl: "#"
             },
             {
                 id: 82,
@@ -772,12 +762,12 @@
                 title: "O Perfume",
                 author: "Patrick Süskind",
                 genre: "Thriller",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788501027764-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780307277763-L.jpg",
                 pdfUrl: "https://cdn.bookey.app/files/pdf/book/pt/o-perfume.pdf"
             },
             {
                 id: 86,
-                title: "O Cálice dos Deuses (Percy Jackson)",
+                title: "O Cálice dos Deuses",
                 author: "Rick Riordan",
                 genre: "Fantasia Juvenil",
                 coverImage: "https://m.media-amazon.com/images/I/91r+5+L.jpg",
@@ -788,7 +778,7 @@
                 title: "O Caçador de Pipas",
                 author: "Khaled Hosseini",
                 genre: "Drama",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B09H8JGWBN.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788520920343-L.jpg",
                 pdfUrl: "http://www.promovesetelagoas.com.br/colegio/arquivos_up/documentos/4ea7e667ce9d3202558d98306d3ab7b9.pdf"
             },
             {
@@ -797,7 +787,7 @@
                 author: "Vários Autores",
                 genre: "História",
                 coverImage: "https://m.media-amazon.com/images/I/81y+3+L.jpg",
-                pdfUrl: "https://example.com/placeholder-book-88.pdf"
+                pdfUrl: "#"
             },
             {
                 id: 89,
@@ -812,7 +802,7 @@
                 title: "O Tempo e o Vento",
                 author: "Erico Verissimo",
                 genre: "Clássico",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788535931082-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788525036162-L.jpg",
                 pdfUrl: "https://www.companhiadasletras.com.br/trechos/13647.pdf?srsltid=AfmBOooUVoV-cVrQbDKyiczxo8TfdQXWE1CmtCkSDlpFiZ3sjxH11nct"
             },
             {
@@ -821,7 +811,7 @@
                 author: "Mike Tyson",
                 genre: "Biográfico",
                 coverImage: "https://m.media-amazon.com/images/I/71uX+J7+5pL.jpg",
-                pdfUrl: "https://example.com/placeholder-book-91.pdf"
+                pdfUrl: "#"
             },
             {
                 id: 92,
@@ -844,7 +834,7 @@
                 title: "O Milagre da Manhã",
                 author: "Hal Elrod",
                 genre: "Auto ajuda",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788576849940-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9781473632158-L.jpg",
                 pdfUrl: "https://www.institutodemissao.org.br/wp-content/uploads/2020/01/O-Milagre-Da-Manh%C3%A3-Hal-Elrod.pdf"
             },
             {
@@ -860,15 +850,15 @@
                 title: "O Mágico de Oz",
                 author: "L. Frank Baum",
                 genre: "Fantasia Juvenil",
-                coverImage: "https://m.media-amazon.com/images/I/81G+4+L.jpg",
-                pdfUrl: "https://example.com/placeholder-book-96.pdf"
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788537810798-L.jpg",
+                pdfUrl: "#"
             },
             {
                 id: 97,
                 title: "O Conto da Aia",
                 author: "Margaret Atwood",
                 genre: "Ficção Científica",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788532520661-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9780001586987-L.jpg",
                 pdfUrl: "https://moodle.ibiruba.ifrs.edu.br/pluginfile.php/25041/mod_resource/content/1/O-Conto-da-Aia-Margaret-Atwood.pdf"
             },
             {
@@ -884,7 +874,7 @@
                 title: "A Cabana",
                 author: "William P. Young",
                 genre: "Drama",
-                coverImage: "https://images-na.ssl-images-amazon.com/images/P/B01NAU1MWU.01.LZZZZZZZ.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788599296363-L.jpg",
                 pdfUrl: "https://mail.elginbematech.com.br/processobook/Book%20Bematech%20Fev-2020/Bematech/Leitura%20Online/Livros/64-%20A%20Cabana.pdf"
             },
             {
@@ -892,11 +882,11 @@
                 title: "O Processo",
                 author: "Franz Kafka",
                 genre: "Clássico",
-                coverImage: "https://covers.openlibrary.org/b/isbn/9788535907407-L.jpg",
+                coverImage: "https://covers.openlibrary.org/b/isbn/9788532660879-L.jpg",
                 pdfUrl: "https://100melhoreslivros.wordpress.com/wp-content/uploads/2009/12/franz-kafka-o-processo.pdf"
             }
         ];
-        // --- FIM DA ÁREA DE CONFIGURAÇÃO DE DADOS ---
+        // --- FIM DA CONFIGURAÇÃO DE DADOS ---
 
 
         // Selecionando os elementos do HTML que vamos manipular
@@ -904,22 +894,14 @@
         const searchInput = document.getElementById('searchInput');
         const genreFilterSelect = document.getElementById('genreFilter');
         const noResultsMessage = document.getElementById('noResultsMessage');
-        // Elemento para o botão de limpar pesquisa
         const clearSearchBtn = document.getElementById('clearSearchBtn');
 
-        // Variáveis para guardar o estado atual dos filtros
         let currentSearchTerm = '';
         let currentGenre = 'Todos';
 
-        /**
-         * Função principal para renderizar os livros na tela.
-         * Ela recebe uma lista de livros e cria os cards para cada um.
-         */
         function renderBooks(booksToRender) {
-            // Limpa a grade de livros antes de adicionar os novos
             bookGrid.innerHTML = '';
 
-            // Verifica se a lista de livros para renderizar está vazia
             if (booksToRender.length === 0) {
                 bookGrid.classList.add('hidden');
                 noResultsMessage.classList.remove('hidden');
@@ -949,14 +931,8 @@
             }
         }
     
-        /**
-         * Função para criar e renderizar as opções do dropdown de gênero.
-         */
         function renderGenreFilterOptions() {
-            // Limpa as opções existentes
             genreFilterSelect.innerHTML = '';
-
-            // Extrai todos os gêneros únicos da lista de livros
             const genres = ['Todos', ...new Set(books.map(book => book.genre))].sort();
             
             genres.forEach(genre => {
@@ -970,22 +946,15 @@
             });
         }
     
-        /**
-         * Função central que filtra os livros com base na pesquisa e no gênero selecionado.
-         */
         function updateDisplay() {
             let filteredBooks = books;
 
-            // 1. Filtrar por gênero
             if (currentGenre !== 'Todos') {
                 filteredBooks = filteredBooks.filter(book => book.genre === currentGenre);
             }
 
-            // 2. Filtrar pelo termo de pesquisa (no título ou autor)
             if (currentSearchTerm) {
-                // Remove acentos e padroniza para minúsculas
                 const normalize = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                
                 const normalizedSearchTerm = normalize(currentSearchTerm);
                 
                 filteredBooks = filteredBooks.filter(book =>
@@ -993,14 +962,9 @@
                     normalize(book.author).includes(normalizedSearchTerm)
                 );
             }
-
-            // Renderiza os livros que passaram por todos os filtros
             renderBooks(filteredBooks);
         }
 
-        /**
-         * Função para mostrar ou esconder o botão de limpar pesquisa.
-         */
         function toggleClearButton() {
             if (searchInput.value.length > 0) {
                 clearSearchBtn.classList.remove('hidden');
@@ -1009,10 +973,9 @@
             }
         }
 
-        // Adiciona os eventos para a barra de pesquisa e o dropdown de gênero
         searchInput.addEventListener('input', (e) => {
             currentSearchTerm = e.target.value;
-            toggleClearButton(); // Controla a visibilidade do botão
+            toggleClearButton();
             updateDisplay();
         });
 
@@ -1021,7 +984,6 @@
             updateDisplay();
         });
 
-        // Adiciona o evento para limpar a pesquisa
         clearSearchBtn.addEventListener('click', () => {
             searchInput.value = '';
             currentSearchTerm = '';
@@ -1029,11 +991,10 @@
             updateDisplay();
         });
 
-        // Função que é executada quando a página termina de carregar
         document.addEventListener('DOMContentLoaded', () => {
             renderGenreFilterOptions();
-            updateDisplay(); // Renderiza todos os livros inicialmente
-            toggleClearButton(); // Garante o estado inicial do botão de limpar
+            updateDisplay();
+            toggleClearButton();
         });
 
     </script>
