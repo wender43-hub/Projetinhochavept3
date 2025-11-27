@@ -11,7 +11,7 @@
     <style>
         /* Estilo base para usar a fonte Inter e IMAGEM DE FUNDO */
         body {
-            font-family: 'fundo png biblioteca.jpg', sans-serif;
+            font-family: 'Inter', sans-serif;
             /* --- LINHAS ADICIONADAS PARA O FUNDO --- */
             background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1507842217121-9d59754a5ce5?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
@@ -908,4 +908,134 @@
         const clearSearchBtn = document.getElementById('clearSearchBtn');
 
         // Variáveis para guardar o estado atual dos filtros
-        let current
+        let currentSearchTerm = '';
+        let currentGenre = 'Todos';
+
+        /**
+         * Função principal para renderizar os livros na tela.
+         * Ela recebe uma lista de livros e cria os cards para cada um.
+         */
+        function renderBooks(booksToRender) {
+            // Limpa a grade de livros antes de adicionar os novos
+            bookGrid.innerHTML = '';
+
+            // Verifica se a lista de livros para renderizar está vazia
+            if (booksToRender.length === 0) {
+                bookGrid.classList.add('hidden');
+                noResultsMessage.classList.remove('hidden');
+            } else {
+                bookGrid.classList.remove('hidden');
+                noResultsMessage.classList.add('hidden');
+                
+                booksToRender.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.innerHTML = `
+                        <a href="${book.pdfUrl}" target="_blank" class="group block h-full bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:border-cyan-500">
+                            <div class="relative">
+                                <img src="${book.coverImage}" alt="Capa do livro ${book.title}" 
+                                     class="w-full book-cover" 
+                                     onerror="this.onerror=null;this.src='https://placehold.co/300x450/1F2937/FFFFFF?text=Capa+Indisponível';">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-base md:text-lg truncate text-gray-100 mb-1">${book.title}</h3>
+                                <p class="text-xs md:text-sm text-gray-400 font-medium">${book.author}</p>
+                                <span class="inline-block mt-2 px-2 py-0.5 text-xs font-semibold text-cyan-200 bg-cyan-700/30 rounded-full">${book.genre}</span>
+                            </div>
+                        </a>
+                    `;
+                    bookGrid.appendChild(bookCard);
+                });
+            }
+        }
+    
+        /**
+         * Função para criar e renderizar as opções do dropdown de gênero.
+         */
+        function renderGenreFilterOptions() {
+            // Limpa as opções existentes
+            genreFilterSelect.innerHTML = '';
+
+            // Extrai todos os gêneros únicos da lista de livros
+            const genres = ['Todos', ...new Set(books.map(book => book.genre))].sort();
+            
+            genres.forEach(genre => {
+                const option = document.createElement('option');
+                option.textContent = genre;
+                option.value = genre;
+                if (genre === 'Todos') {
+                    option.selected = true;
+                }
+                genreFilterSelect.appendChild(option);
+            });
+        }
+    
+        /**
+         * Função central que filtra os livros com base na pesquisa e no gênero selecionado.
+         */
+        function updateDisplay() {
+            let filteredBooks = books;
+
+            // 1. Filtrar por gênero
+            if (currentGenre !== 'Todos') {
+                filteredBooks = filteredBooks.filter(book => book.genre === currentGenre);
+            }
+
+            // 2. Filtrar pelo termo de pesquisa (no título ou autor)
+            if (currentSearchTerm) {
+                // Remove acentos e padroniza para minúsculas
+                const normalize = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                
+                const normalizedSearchTerm = normalize(currentSearchTerm);
+                
+                filteredBooks = filteredBooks.filter(book =>
+                    normalize(book.title).includes(normalizedSearchTerm) ||
+                    normalize(book.author).includes(normalizedSearchTerm)
+                );
+            }
+
+            // Renderiza os livros que passaram por todos os filtros
+            renderBooks(filteredBooks);
+        }
+
+        /**
+         * Função para mostrar ou esconder o botão de limpar pesquisa.
+         */
+        function toggleClearButton() {
+            if (searchInput.value.length > 0) {
+                clearSearchBtn.classList.remove('hidden');
+            } else {
+                clearSearchBtn.classList.add('hidden');
+            }
+        }
+
+        // Adiciona os eventos para a barra de pesquisa e o dropdown de gênero
+        searchInput.addEventListener('input', (e) => {
+            currentSearchTerm = e.target.value;
+            toggleClearButton(); // Controla a visibilidade do botão
+            updateDisplay();
+        });
+
+        genreFilterSelect.addEventListener('change', (e) => {
+            currentGenre = e.target.value;
+            updateDisplay();
+        });
+
+        // Adiciona o evento para limpar a pesquisa
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearchTerm = '';
+            toggleClearButton();
+            updateDisplay();
+        });
+
+        // Função que é executada quando a página termina de carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGenreFilterOptions();
+            updateDisplay(); // Renderiza todos os livros inicialmente
+            toggleClearButton(); // Garante o estado inicial do botão de limpar
+        });
+
+    </script>
+</body>
+</html>
